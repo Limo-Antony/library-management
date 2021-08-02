@@ -12,7 +12,6 @@ Compiler: C99
 
 struct employee {
     int age, id;
-    double salary;
 };
 
 
