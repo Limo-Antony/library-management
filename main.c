@@ -12,6 +12,7 @@ Compiler: C99
 
 struct employee {
     int age, id;
+    double salary;
 };
 
 
@@ -24,7 +25,7 @@ int main()
 {
  login();
  mainmenu();
-
+staff_membres();
 return 0;
 
 }
@@ -42,13 +43,16 @@ void login(){
     printf("Enter your username:\n");
     scanf("%s",&username);
 
+
     printf("Enter your password:\n");
     scanf("%s",&password);
+
 
     if(strcmp(username,"Limo")==0){
         if(strcmp(password,"1213")==0){
 
         printf("\nWelcome.Login Success! \n");
+        system("cls");
 
 
         }else{
@@ -57,7 +61,7 @@ void login(){
     }else{
     printf("User doesn't exist\n");
 
-    return ;
+    return 0;
 
 }
 
@@ -114,8 +118,8 @@ void staff_membres(){
     do {
 
         printf("1. Add Employee\n");
-        printf("4. Remove Employee\n");
-        printf("3. Exit\n");
+        printf("2. Remove Employee\n");
+        printf("0. Exit\n");
         printf("Please select from the above options: ");
         scanf("%d", &option);
         printf("\n");
@@ -127,8 +131,8 @@ void staff_membres(){
         case 1:
             printf("Adding Employee\n");
 
-            if (n1 < 4) {
-                for (i = 0; i < 4; i++)
+            if (n1 < 3) {
+                for (i = 0; i < 3; i++)
                 {
                     if (emp[i].id == 0)
                     {
@@ -162,11 +166,11 @@ void staff_membres(){
                 scanf("%d", &n3);
 
 
-                for (i = 0; i < 4; i++) {
+                for (i = 0; i < 3; i++) {
                     if (n3 == emp[i].id)
                     {
                         true2 = 1;
-                        printf("Employee %d will be removed", emp[i].id);
+                        printf("Employee %d will be removed \n", emp[i].id);
                         emp[i].id = 0;
                         n1--;
                     }
@@ -201,4 +205,3 @@ void staff_membres(){
 
     }
     //edit books function
-
